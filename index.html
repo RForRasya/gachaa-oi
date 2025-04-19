@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ocean Doorprize Spinner</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&family=Pacifico&display=swap">
+</head>
+<body>
+    <div class="bubbles">
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+    </div>
+    
+    <div class="container">
+        <header>
+            <h1>Ocean Doorprize Spinner</h1>
+            <div class="fish-decoration left"></div>
+            <div class="fish-decoration right"></div>
+        </header>
+        
+        <main>
+            <div class="wheel-section">
+                <div class="wheel-container">
+                    <div class="wheel" id="wheel">
+                        <!-- Segments will be added by JavaScript -->
+                    </div>
+                    <div class="wheel-center">
+                        <div class="wheel-center-inner"></div>
+                    </div>
+                    <div class="wheel-pointer"></div>
+                </div>
+                
+                <button id="spin-btn" class="spin-btn">SPIN THE WHEEL</button>
+            </div>
+            
+            <div class="controls">
+                <div class="mode-toggle">
+                    <button id="prize-mode-btn" class="mode-btn active">Prize Mode</button>
+                    <button id="number-mode-btn" class="mode-btn">Number Mode</button>
+                </div>
+                
+                <div id="prize-controls" class="prize-controls">
+                    <h3>Customize Prizes</h3>
+                    <div class="prize-inputs">
+                        <div class="prize-input-container">
+                            <input type="text" id="prize-input" placeholder="Enter prize name">
+                            <button id="add-prize-btn">Add</button>
+                        </div>
+                        <div class="prize-list" id="prize-list">
+                            <!-- Prize list will be populated by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="number-controls" class="number-controls hidden">
+                    <h3>Number Range</h3>
+                    <div class="range-inputs">
+                        <div class="range-input-group">
+                            <label for="min-number">Min:</label>
+                            <input type="number" id="min-number" value="1" min="1" max="999">
+                        </div>
+                        <div class="range-input-group">
+                            <label for="max-number">Max:</label>
+                            <input type="number" id="max-number" value="100" min="2" max="1000">
+                        </div>
+                        <button id="update-range-btn">Update</button>
+                    </div>
+                    <div class="number-display">
+                        <h3>Result</h3>
+                        <div id="result-number" class="result-number">?</div>
+                    </div>
+                    <div class="history-section">
+                        <h3>Previous Numbers</h3>
+                        <div id="number-history" class="number-history">
+                            <p class="empty-history">No numbers yet. Spin the wheel!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        
+        <div id="winner-modal" class="modal">
+            <div class="modal-content">
+                <div class="modal-decoration top-left"></div>
+                <div class="modal-decoration top-right"></div>
+                <div class="modal-decoration bottom-left"></div>
+                <div class="modal-decoration bottom-right"></div>
+                <h2>Congratulations!</h2>
+                <p id="winner-text">The winner is:</p>
+                <div id="winner-display" class="winner-display"></div>
+                <button id="close-modal">Close</button>
+            </div>
+        </div>
+        
+        <canvas id="confetti-canvas"></canvas>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
